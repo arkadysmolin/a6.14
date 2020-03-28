@@ -31,9 +31,9 @@ function endGame() {
 
   let totalPlayedMillis = getTimestamp() - firstHitTime;
   let totalPlayedSeconds = Number(totalPlayedMillis / 1000).toPrecision(3);
-  let totaloGamePoint=10-missHits;
+  let totalGamePoint=10-missHits;
   $("#total-time-played").text(totalPlayedSeconds);
-  $("#poinCount").text(totaloGamePoint);
+  $("#poinCount").text(totalGamePoint);
 
   $("#win-message").removeClass("d-none");
 }
