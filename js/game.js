@@ -1,6 +1,7 @@
 const numDivs = 36;
 const maxHits = 10;
 
+let missHits=0;
 let hits = 0;
 let firstHitTime;
 
@@ -30,7 +31,9 @@ function endGame() {
 
   let totalPlayedMillis = getTimestamp() - firstHitTime;
   let totalPlayedSeconds = Number(totalPlayedMillis / 1000).toPrecision(3);
+  let totaloGamePoint=10-missHits;
   $("#total-time-played").text(totalPlayedSeconds);
+  $("#poinCount").text(totaloGamePoint);
 
   $("#win-message").removeClass("d-none");
 }
@@ -44,7 +47,8 @@ function handleClick(event) { // обрабатываем клик по клет
     round();
   }
   // TODO: как-то отмечать если мы промахнулись? См CSS класс .miss
-  else { $(event.target).addClass('miss'); } 
+  else { $(event.target).addClass('miss');
+  missHits=missHits+1; } 
 
 }
 
